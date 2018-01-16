@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="isRecording ? 'danger' :  'primary'">
     <ion-title>
-      Ionic Blank
+      Speech Recognition
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<button ion-button full (click)="getPermission()">Get Permission</button>
+<button ion-button full (click)="startListening()">Start Listening</button>
+<button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
+
+<h4>This is what i understood...</h4>
+<hr>
+<p *ngFor="let match of matches">{{ match }}</p>
+<hr>
+<p>Created By Richard Gamora</p>
 </ion-content>
