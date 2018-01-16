@@ -31,9 +31,9 @@ export class HomePage {
   }
 
   startListening () {
-    let options = {
-      language: 'en-US'
-    }
+    // let options = {
+    //   language: 'en-US'
+    // }
     this.speechRecognition.startListening()
     .subscribe(matches => {
       this.matches = matches;
